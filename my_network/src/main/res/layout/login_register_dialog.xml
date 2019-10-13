@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <!--右上角交叉区域-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_launcher_background"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="45dp"
+            android:paddingBottom="45dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:text="登录"
+                android:textSize="50sp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:text="斗鱼账号登录"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:background="@drawable/orange_corner_button" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="25dp"
+                android:text="快速注册"
+                android:textColor="#FF6500"
+                android:gravity="center"
+                android:background="@drawable/orange_border_corner_button"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#787878"
+                android:singleLine="true"
+                android:textSize="11sp"
+                android:text="使用即为同意使用"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:singleLine="true"
+                android:textSize="13sp"
+                android:text="《斗鱼注册协议及版权声明》"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="35dp"
+            android:gravity="center">
+            <View
+                android:layout_width="30dp"
+                android:layout_height="1dp"
+                android:background="@android:color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#787878"
+                android:textSize="19sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="快速登录"/>
+            <View
+                android:layout_width="30dp"
+                android:layout_height="1dp"
+                android:background="@android:color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/imageView_WeChat"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_launcher_background" />
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="match_parent"/>
+            <ImageView
+                android:id="@+id/imageView_QQ"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_launcher_background" />
+            <View
+                android:layout_width="60dp"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/imageView_WeiBo"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="match_parent"/>
+            <ImageView
+                android:id="@+id/imageView_Mobile_Num"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_launcher_background" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
