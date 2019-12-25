@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements SrsEncodeHandler.
             Log.d("MainActivity","permission_granted");
             //iCamera2.startPreview();
             publisher.startCamera();
-            publisher.startPublish("rtmp://192.168.88.107:1935/hls/test");
+            publisher.startPublish("rtmp://192.168.5.250:1935/hls/test");
         }
     }
 

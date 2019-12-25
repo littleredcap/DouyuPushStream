@@ -74,7 +74,7 @@ public class VideoEncoder {
             public void onRtmpConnected(String msg) {
                 Log.d("rtmpConnected",msg);
                 //srsPublisher.startPublish("rtmp://192.168.88.107:1935/hls/test");
-                //srsFlvMuxer.start("rtmp://192.168.88.107:1935/hls/test");
+                srsFlvMuxer.start("rtmp://192.168.88.107:1935/hls/test");
             }
 
             @Override

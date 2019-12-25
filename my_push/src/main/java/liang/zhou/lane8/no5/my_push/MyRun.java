@@ -138,6 +138,5 @@ public class MyRun {
         System.out.println(Arrays.toString(sample) + "duration:" + duration);*/
         int a[]=new int[10];
         System.out.println(a);
-
     }
 }

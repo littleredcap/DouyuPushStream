@@ -27,7 +27,7 @@ public class YUVUtil {
             int width = image.getWidth();
             int height = image.getHeight();
 
-            //此处用来装填最终的YUV数据，需要1.5倍的图片大小，因为Y U V 比例为 4:1:1
+            //此处用来装填最终的YUV数据，需要1.5倍的图片大小，因为Y U V 比例为 4:1:1，YUV分量各占8位
             byte[] yuvBytes = new byte[width * height * ImageFormat.getBitsPerPixel(ImageFormat.YUV_420_888) / 8];
             //目标数组的装填到的位置
             int dstIndex = 0;
