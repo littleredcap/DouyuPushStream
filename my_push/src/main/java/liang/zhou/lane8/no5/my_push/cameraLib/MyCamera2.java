@@ -33,6 +33,7 @@ import net.ossrs.yasea.SrsEncodeHandler;
 import net.ossrs.yasea.SrsEncoder;
 import net.ossrs.yasea.SrsFlvMuxer;
 import net.ossrs.yasea.SrsMp4Muxer;
+import net.ossrs.yasea.SrsPublisher;
 import net.ossrs.yasea.SrsRecordHandler;
 
 import java.io.IOException;
@@ -40,6 +41,8 @@ import java.lang.ref.WeakReference;
 import java.net.SocketException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
+
+import liang.zhou.lane8.no5.my_push.audio_raw_data_handler.AudioHelper;
 
 public class MyCamera2 implements ICamera2 {
 
@@ -62,6 +65,7 @@ public class MyCamera2 implements ICamera2 {
     private SrsFlvMuxer mFlvMuxer;
     private SrsMp4Muxer mMp4Muxer;
     private int definition=1;
+    private SrsPublisher publisher;
 
 
     private WeakReference<Context> weakCtx;
@@ -74,6 +78,7 @@ public class MyCamera2 implements ICamera2 {
         createEncoder();
         //post_surface=encoder.getSurface();
         imageReader = getImageReader();
+        publisher=new SrsPublisher();
         //encoder.encode();
 
     }
@@ -199,10 +204,19 @@ public class MyCamera2 implements ICamera2 {
         srsEncoder.setFlvMuxer(mFlvMuxer);
         //srsEncoder.setPortraitResolution(1200,1600);
         srsEncoder.setScreenOrientation(Configuration.ORIENTATION_PORTRAIT);
+        //publisher.setEncodeHandler(encodeHandler);
+        //publisher.startAudio();
         //srsEncoder.setPortraitResolution(previewWidth, previewHeight);
         //srsEncoder.setLandscapeResolution(previewWidth, previewHeight);
-
         srsEncoder.start();
+        AudioHelper audio=new AudioHelper();
+        audio.startRecord();
+        audio.fetchPCM(new AudioHelper.PCMListener() {
+            @Override
+            public void pcmArrived(byte[] perFrame,int size) {
+                srsEncoder.onGetPcmFrame(perFrame,size);
+            }
+        });
     }
     public int getDefinition(){
         return definition;

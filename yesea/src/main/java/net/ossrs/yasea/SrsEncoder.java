@@ -38,6 +38,7 @@ public class SrsEncoder {
     public static final int ASAMPLERATE = 44100;
     public static int aChannelConfig = AudioFormat.CHANNEL_IN_STEREO;
     public static final int ABITRATE = 64 * 1024;  // 64 kbps
+    //public static final int ABITRATE = 96000;
 
     private SrsEncodeHandler mHandler;
 
@@ -383,12 +384,13 @@ public class SrsEncoder {
             int inBufferIndex = aencoder.dequeueInputBuffer(-1);
             if (inBufferIndex >= 0) {
                 ByteBuffer bb = inBuffers[inBufferIndex];
+                //ByteBuffer bb=aencoder.getInputBuffer(inBufferIndex);
                 bb.clear();
                 bb.put(data, 0, size);
+                //bb.put(data);
                 long pts = System.nanoTime() / 1000 - mPresentTimeUs;
                 aencoder.queueInputBuffer(inBufferIndex, 0, size, pts, 0);
             }
-
             for (; ; ) {
                 MediaCodec.BufferInfo aebi = new MediaCodec.BufferInfo();
                 int outBufferIndex = aencoder.dequeueOutputBuffer(aebi, 0);
